@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Restaurant</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        header nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .hero img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 10px;
+            margin-top: 1rem;
+        }
+
+        /* Menu Items */
+        .menu-item {
+            display: inline-block;
+            width: 200px;
+            margin: 1rem;
+        }
+
+        .menu-item img {
+            width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .menu-item img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Button Styling */
+        button {
+            padding: 0.5rem 1rem;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>My Restaurant</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#menu">Menu</a>
+            <a href="#checkout">Checkout</a>
+            <a href="#about">About Us</a>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="section hero">
+        <h2>Welcome to My Restaurant</h2>
+        <p>Your favorite meals delivered to you!</p>
+        <img src="https://via.placeholder.com/600x400" alt="Restaurant Image">
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="section menu">
+        <h2>Our Menu</h2>
+        <div class="menu-item">
+            <img src="https://via.placeholder.com/200" alt="Dish 1">
+            <h3>Dish 1</h3>
+            <p>$12.99</p>
+        </div>
+        <div class="menu-item">
+            <img src="https://via.placeholder.com/200" alt="Dish 2">
+            <h3>Dish 2</h3>
+            <p>$10.99</p>
+        </div>
+        <!-- Add more dishes as needed -->
+    </section>
+
+    <!-- Checkout Section -->
+    <section id="checkout" class="section checkout-form">
+        <h2>Checkout</h2>
+        <form>
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" required><br><br>
+            <label for="address">Address:</label><br>
+            <input type="text" id="address" required><br><br>
+            <button type="submit">Place Order</button>
+        </form>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="section about">
+        <h2>About Us</h2>
+        <p>We are passionate about delivering delicious meals to your door.</p>
+        <img src="https://via.placeholder.com/600x400" alt="Our Team">
+    </section>
+
+    <!-- JavaScript Section -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log("Website loaded successfully!");
+
+            // Smooth Scroll Functionality
+            document.querySelectorAll('nav a').forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const sectionID = this.getAttribute('href').substring(1);
+                    document.getElementById(sectionID).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
